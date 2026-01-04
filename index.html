@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WeKind — доброта, переданная по цепочке</title>
   <meta name="description" content="Отправь тёплое слово незнакомцу. Получи ответ. Передай дальше.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -48,55 +49,40 @@
       font-size: 1.1rem;
       line-height: 1.5;
     }
-
-    /* Стили для формы UniSender */
     #static-form-container form {
-      max-width: 100%;
-      margin: 0 auto;
-    }
-    #static-form-container table,
-    #static-form-container .container {
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      max-width: 100% !important;
-      width: 100% !important;
-    }
-    #static-form-container input[type="text"] {
-      width: 100% !important;
-      padding: 10px 12px !important;
-      border-radius: 10px !important;
-      border: 1px solid #ddd !important;
-      font-size: 1rem !important;
-      margin-top: 6px !important;
-      background: #fff !important;
-    }
-    #static-form-container button {
-      width: 100% !important;
-      padding: 12px !important;
-      border-radius: 10px !important;
-      background: #d16a50 !important;
-      color: white !important;
-      font-weight: 600 !important;
-      border: none !important;
-      cursor: pointer !important;
-      font-size: 1rem !important;
-    }
-    #static-form-container button:hover {
-      background: #b95a45 !important;
+      display: block;
     }
     #static-form-container label {
-      display: block !important;
-      text-align: left !important;
-      margin-bottom: 6px !important;
-      font-weight: 600 !important;
-      color: #333 !important;
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
     }
-    #static-form-container .error-block {
-      text-align: left !important;
-      margin-top: 6px !important;
+    #static-form-container input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      margin-top: 6px;
+      background: #fff;
     }
-
+    #static-form-container button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      background: #d16a50;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 12px;
+    }
+    #static-form-container button:hover {
+      background: #b95a45;
+    }
     .trust-note {
       font-size: 0.82rem;
       color: #888;
@@ -114,6 +100,14 @@
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+    .legal {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+    }
+    .legal a {
+      color: #888;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -124,9 +118,9 @@
     <div class="form-box">
       <p>Отправь тёплое слово незнакомцу.<br>Получи ответ. Передай дальше.</p>
 
-      <!-- Вставленная статическая форма UniSender -->
-      <div id="static-form-container" data-url="https://cp.unisender.com/ru/v5/subscribe-form/view/6cub7yi6pjwxazsp53bb4cc6k3ux433etue94oia" data-settings="6un8mw9qzn5yt1411iz546sa44npc7mc1s1bod7iox5jhj6h4z8ao">
-        <form method="POST" action="https://cp.unisender.com/ru/subscribe?hash=68r4jr3hwskxkg411iz546sa44y3qznbp3zak8upp4fr1jdwefriy" name="subscribtion_form" us_mode="embed">
+      <!-- Форма UniSender -->
+      <div id="static-form-container">
+        <form method="POST" action="https://cp.unisender.com/ru/subscribe?hash=68r4jr3hwskxkg411iz546sa44y3qznbp3zak8upp4fr1jdwefriy" name="subscribtion_form">
           <label>E-mail <b style="color:#d16a50;">*</b></label>
           <input type="text" name="email" _validator="email" _required="1" placeholder="Твой email">
           <div class="error-block"></div>
@@ -144,13 +138,10 @@
     </div>
 
     <p class="footer">Мы запустим WeKind весной 2026. <strong>Ты первым узнаешь!</strong></p>
-  </div>
 
-  <!-- Скрипты UniSender (оставим на случай, если понадобятся позже) -->
-  <script src="https://shared.s3.unisender.ru/popups/popup.js"></script>
-  <script>
-    // Убираем автоматический popup, если он не нужен
-    // window.popupForSubscriptionsForm("https://apig.unisender.com");
-  </script>
+    <p class="legal">
+      <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
+    </p>
+  </div>
 </body>
 </html>
